@@ -12,8 +12,8 @@ import static frc.robot.Constants.*;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.ClimbDown;
 import frc.robot.commands.ClimbUp;
+import frc.robot.commands.ClimbDown;
 import frc.robot.commands.Drive;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Arm;

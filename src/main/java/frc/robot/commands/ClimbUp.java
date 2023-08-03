@@ -4,14 +4,13 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.robot.subsystems.Arm;
 
-// NOTE:  Consider using this command inline, rather than writing a subclass.  For more
-// information, see:
-// https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class ClimbUp extends InstantCommand {
-  private Arm arm = null;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+
+public class ClimbUp extends CommandBase {
+  private Arm arm;
+  /** Creates a new ClimbUp. */
   public ClimbUp(Arm arm) {
     this.arm = arm;
     // Use addRequirements() here to declare subsystem dependencies.
@@ -21,5 +20,21 @@ public class ClimbUp extends InstantCommand {
   @Override
   public void initialize() {
     arm.climbUp();
+  }
+
+  // Called every time the scheduler runs while the command is scheduled.
+  @Override
+  public void execute() {}
+
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {
+    arm.stop();
+  }
+
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
+    return false;
   }
 }
