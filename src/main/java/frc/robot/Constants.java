@@ -22,7 +22,7 @@ public final class Constants {
     public static final int DRIVE_RIGHT_FRONT_MOTOR = 1;
     public static final int DRIVE_RIGHT_BACK_MOTOR = 3;
     public static final MotorType DRIVE_MOTOR_TYPE = MotorType.kBrushless;
-    public static final double SPEED = .5;
+    public static final double SPEED = .3;
     public static final IdleMode DRIVE_IDLE_TYPE = IdleMode.kCoast;
     public static final int DRIVE_CURRENT = 30;
     public static double DRIVE_FACTOR = .5; // changed for turbo
@@ -33,9 +33,10 @@ public final class Constants {
     public static final int ARM_MOTOR1 = 6;
     public static final int ARM_MOTOR2 = 7;
     public static final MotorType ARM_MOTOR_TYPE = MotorType.kBrushed;
-    public static final IdleMode ARM_IDLE_TYPE = IdleMode.kBrake;
+    public static final IdleMode ARM_IDLE_TYPE = IdleMode.kCoast;
     public static final int ARM_CURRENT = 30;
     public static final double ARM_SPEED = .375;
+    public static final double MAX_ARM_SPEED = -.9;
 
     // Bucket motor - SparkMaxController
     public static final int BUCKET_MOTOR = 5;

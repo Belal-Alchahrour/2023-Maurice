@@ -34,7 +34,7 @@ public class Arm extends SubsystemBase {
   }
 
   public void climbDown() {
-    armDrive.set(-ARM_SPEED);
+    armDrive.set(MAX_ARM_SPEED);
   }
 
   public void stop() {
