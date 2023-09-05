@@ -42,6 +42,8 @@ public final class Constants {
     public static final int BUCKET_MOTOR = 5;
     public static final double BUCKET_SPEED = .5;
     public static final MotorType BUCKET_MOTOR_TYPE = MotorType.kBrushed;
+    public static final IdleMode BUCKET_IDLE_TYPE = IdleMode.kCoast;
+    public static final int BUCKET_CURRENT = 30;
 
     // Sensor
     public static final int TALON_CHANNEL = 8;

@@ -15,8 +15,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.Drive;
+import frc.robot.commands.LiftDown;
+import frc.robot.commands.LiftUp;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.Bucket;
 
 
 /**
@@ -33,10 +36,14 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Drivetrain m_drivetrain = new Drivetrain();
   private final Arm m_Arm = new Arm();
+  private final Bucket m_Bucket = new Bucket();
+
 
   private final ClimbDown m_climbdown = new ClimbDown(m_Arm);
   private final ClimbUp m_climbup = new ClimbUp(m_Arm);
   private final Drive m_drive = new Drive(m_drivetrain, m_driverController);
+  private final LiftUp m_liftup = new LiftUp(m_Bucket);
+  private final LiftDown m_liftdown = new LiftDown(m_Bucket);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -56,6 +63,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     m_driverController.a().whileTrue(m_climbup);
     m_driverController.b().whileTrue(m_climbdown);
+    m_driverController.y().whileTrue(m_liftdown);
+    m_driverController.x().whileTrue(m_liftup);
  
   }
 
